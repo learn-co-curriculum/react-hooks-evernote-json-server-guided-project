@@ -22,8 +22,8 @@ The seed file should create one user for you, so your default `USER_ID` should b
 | ------ | ------------------- |:--------------------------------------------------------------------:|:--------------------:|
 | GET    | `/api/v1/users`     |                                                                      |                      |
 | GET    | `/api/v1/notes`     |                                                                      |                      |
-| POST   | `/api/v1/notes`     | `'Content-Type': 'application/json'`  `'Accept': 'application/json'` | title, body, user_id |
-| PATCH  | `/api/v1/notes/:id` | `'Content-Type': 'application/json'`  `'Accept': 'application/json'` | title, body, user_id |
+| POST   | `/api/v1/notes`     | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
+| PATCH  | `/api/v1/notes/:id` | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
 
 *Tips:*
 * Test out your routes with [Postman](https://www.getpostman.com/) to see how they work and what they return.
