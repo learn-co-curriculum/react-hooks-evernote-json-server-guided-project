@@ -1,0 +1,187 @@
+/**
+ * By Brooke.
+ **/
+
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|IBM+Plex+Mono|Poppins');
+
+* {
+  font-family: 'Didact Gothic'
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Styles */
+h2, input[name="title"], textarea {
+  font-family: 'IBM Plex Mono'
+}
+
+p.instructions {
+	font-family: monospace;
+	font-size: 32px;
+	text-align: center;
+}
+
+.note-editor input[name="title"] {
+  font-size: 24px;
+  font-weight: 700;
+  border: 1px dashed grey;
+  margin: 0.5em 0;
+  box-sizing: border-box;
+}
+
+.note-editor textarea {
+  font-size: 1em;
+  border: 1px dashed grey;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.nav-bar {
+  width: 100%;
+  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-repeat: no-repeat;
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nav-item {
+  list-style: none;
+  color: white;
+  padding: 4px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed grey;
+}
+
+input {
+  font-size: 24px;
+  height: 40px;
+  width: 100%;
+  border: none;
+}
+
+input::placeholder {
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: bolder;
+}
+
+div.sidebar button {
+  width: 100%;
+}
+
+div.sidebar ul {
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+div.sidebar ul li {
+  list-style: none;
+  border-bottom: 1px solid grey;
+  padding: 0 5px;
+}
+
+div.sidebar ul li:first-child {
+  border-top: 1px solid grey;
+}
+
+div.sidebar ul li:hover {
+  /* background-color: yellow; */
+  background-image: linear-gradient(#E6E6E6, #F7F7F7);
+  background-repeat: no-repeat;
+}
+
+
+/* Layout Styles */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 10px);
+  margin: 10px 10px 0 10px;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.master-detail-element {
+  float:left;
+  margin: 10px 0px;
+  padding: 20px;
+  border: 2px dashed grey;
+}
+
+.sidebar {
+  width:25%;
+  overflow: scroll;
+}
+
+.detail {
+  width:75%;
+}
+
+.note-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.note-editor textarea {
+  flex: 1;
+}
+
+.button-row {
+  margin-top: 10px;
+}
+
+
+/* Button Style */
+input[type="submit"] {
+  height: auto;
+  width: auto;
+}
+
+button, input[type="submit"] {
+  width: 125px;
+  border-radius: 200px;
+  margin-right: 10px;
+  padding: 5px 35px;
+  border: 0px;
+  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+button:hover, .nav-bar:hover, input[type="submit"]:hover {
+  background-image: linear-gradient(to right top, #8A2387, #E94057, #F27121);
+  background-repeat: no-repeat;
+}
+
+button:focus, input[type="submit"]:focus {
+  outline: none;
+}
