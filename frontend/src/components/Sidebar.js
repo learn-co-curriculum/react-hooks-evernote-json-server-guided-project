@@ -6,6 +6,7 @@ class Sidebar extends Component {
     return (
       <div className='master-detail-element sidebar'>
         <NoteList />
+        <button>New</button>
       </div>
     );
   }

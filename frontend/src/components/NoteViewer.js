@@ -5,6 +5,7 @@ const NoteViewer = (props) => {
     <Fragment>
       <h2>Title</h2>
       <p>Body</p>
+      <button>Edit</button>
     </Fragment>
   );
 }
