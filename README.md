@@ -117,4 +117,3 @@ Some suggestions:
 - Rich text formatting
 - Tagging
 - Emailing notes
- 
