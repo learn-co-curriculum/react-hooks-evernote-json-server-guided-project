@@ -28,3 +28,4 @@ The seed file should create one user for you, so your default `USER_ID` should b
 *Tips:*
 * Test out your routes with [Postman](https://www.getpostman.com/) to see how they work and what they return.
 * Look at the source code! There are many more routes that are not listed that may make your life easier. Use those development skills and hack the code!
+
