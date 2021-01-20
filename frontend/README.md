@@ -1,12 +1,12 @@
-README: React Frontend
-======================
+# README: React Frontend
 
 ## Setup
 
+From within this directory:
+
 ```sh
-# from within this directory:
 npm install
-PORT=4000 npm start
+npm start
 ```
 
 This React app will be running on `http://localhost:4000`.

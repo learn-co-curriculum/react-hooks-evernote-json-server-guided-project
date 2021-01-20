@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const Search = () => {
+function Search() {
   return (
     <div className="filter">
-      <input
-        id="search-bar"
-        type="text"
-        placeholder="Search Notes"
-      />
+      <input id="search-bar" type="text" placeholder="Search Notes" />
     </div>
   );
 }

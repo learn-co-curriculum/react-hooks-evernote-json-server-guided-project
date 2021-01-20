@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
+import React from "react";
 
-const NoteViewer = (props) => {
+function NoteViewer() {
   return (
-    <Fragment>
+    <>
       <h2>Title</h2>
       <p>Body</p>
       <button>Edit</button>
-    </Fragment>
+    </>
   );
 }
 

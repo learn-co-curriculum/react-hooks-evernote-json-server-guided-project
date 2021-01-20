@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Instructions = () => {
+function Instructions() {
   return <p className="instructions">Select a note.</p>;
 }
 
