@@ -14,18 +14,13 @@ goals. Some suggestions are listed below, but try to be creative!
 
 ## Setup
 
-The codebase is split up into a Rails API backend and a React frontend.
-Everything is contained in this single repository. Your Rails code is located
-inside of the `backend` folder and your React code is located inside of the
-`frontend` folder.
-
-Each of those folders has a README file with setup instructions. For
-conciseness, those instructions are copy pasted here:
+The codebase is split up into a JSON Server API backend and a React frontend.
 
 ### Frontend
 
+To setup and run your frontend:
+
 ```sh
-# from within the frontend directory:
 npm install
 npm start
 ```
@@ -34,46 +29,44 @@ This React app will be running on `http://localhost:4000`.
 
 ### Backend
 
+First, set up your database by running:
+
 ```sh
-# from within the backend directory:
-bundle install
-rails db:create db:migrate db:seed
-rails s
+npm run seed
 ```
 
-Your Rails backend API will be running on `http://localhost:3000`.
+This will seed some starter data for you in the `db/db.json` file. Any time you
+want to reset your database to its original state, just run `npm run seed` again
+to overwrite your data with some fresh seed data.
 
-#### User ID
+To run `json-server`, run:
 
-The seed file should create one user for you, so your default `USER_ID` should
-be `1`. If that doesn't work, debug it with the `/api/v1/users` route as shown
-below.
+```sh
+npm run server
+```
+
+Your backend API will be running on `http://localhost:3000`.
+
+### User ID
+
+The seed file should create one user for you, so your default `userId` should
+be `1`. You can check the `db/db.json` file to make sure.
 
 #### Routes
 
-| Method | Route               |                               Headers                               |         Body         |
-| ------ | ------------------- | :-----------------------------------------------------------------: | :------------------: |
-| GET    | `/api/v1/users`     |                                                                     |                      |
-| GET    | `/api/v1/notes`     |                                                                     |                      |
-| POST   | `/api/v1/notes`     | `'Content-Type': 'application/json'`;`'Accept': 'application/json'` | title, body, user_id |
-| PATCH  | `/api/v1/notes/:id` | `'Content-Type': 'application/json'`;`'Accept': 'application/json'` | title, body, user_id |
+| Method | Route        |                               Headers                               |        Body         |
+| ------ | ------------ | :-----------------------------------------------------------------: | :-----------------: |
+| GET    | `/users`     |                                                                     |                     |
+| GET    | `/notes`     |                                                                     |                     |
+| POST   | `/notes`     | `'Content-Type': 'application/json'`;`'Accept': 'application/json'` | title, body, userId |
+| PATCH  | `/notes/:id` | `'Content-Type': 'application/json'`;`'Accept': 'application/json'` | title, body, userId |
 
 **Tips:**
 
 - Test out your routes with [Postman](https://www.getpostman.com/) to see how
   they work and what they return.
-- Look at the source code! There are many more routes that are not listed that
-  may make your life easier. Use those development skills and hack the code!
 
 ## Provided Code
-
-### Backend Code
-
-- The entire backend API is complete for the baseline deliverables.
-- You should not have to modify this code unless you want to add stretch
-  features that are not currently supported by this API.
-
-### Frontend Code
 
 - All CSS styles are provided for you.
 - Many components are provided for you, but most are not completely functional.
@@ -92,13 +85,13 @@ baseline deliverables you need to complete:
 - [ ] When a note from the sidebar is clicked, display its contents in the right
       panel.
 
-![completed display notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-guided-project/master/react-evernote-display.gif)
+![completed display notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-display.gif)
 
 ### Filtering Notes
 
 - [ ] Implement the filter to search through your notes list by title.
 
-![completed filter notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-guided-project/master/react-evernote-filter.gif)
+![completed filter notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-filter.gif)
 
 ### Creating Notes
 
@@ -111,7 +104,7 @@ baseline deliverables you need to complete:
       the body of your request.
 - [ ] This new note should appear in the sidebar.
 
-![completed create notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-guided-project/master/react-evernote-create.gif)
+![completed create notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-create.gif)
 
 ### Editing Notes
 
@@ -125,7 +118,7 @@ baseline deliverables you need to complete:
 - [ ] Clicking a different note while in edit mode should discard your changes
       and display the new note instead.
 
-![completed edit notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-guided-project/master/react-evernote-edit.gif)
+![completed edit notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-edit.gif)
 
 ## Stretch Goals
 

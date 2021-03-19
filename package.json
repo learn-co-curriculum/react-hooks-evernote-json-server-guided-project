@@ -1,0 +1,36 @@
+{
+  "name": "react-hooks-evernote-json-server-guided-project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1"
+  },
+  "devDependencies": {
+    "faker": "^5.4.0",
+    "json-server": "^0.16.3"
+  },
+  "scripts": {
+    "start": "PORT=4000 react-scripts start",
+    "server": "json-server ./db/db.json --watch",
+    "seed": "node ./db/seed.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
