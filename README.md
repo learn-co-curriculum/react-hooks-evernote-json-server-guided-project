@@ -85,13 +85,13 @@ baseline deliverables you need to complete:
 - [ ] When a note from the sidebar is clicked, display its contents in the right
       panel.
 
-![completed display notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-display.gif)
+![completed display notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-display.gif)
 
 ### Filtering Notes
 
 - [ ] Implement the filter to search through your notes list by title.
 
-![completed filter notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-filter.gif)
+![completed filter notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-filter.gif)
 
 ### Creating Notes
 
@@ -104,7 +104,7 @@ baseline deliverables you need to complete:
       the body of your request.
 - [ ] This new note should appear in the sidebar.
 
-![completed create notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-create.gif)
+![completed create notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-create.gif)
 
 ### Editing Notes
 
@@ -118,7 +118,7 @@ baseline deliverables you need to complete:
 - [ ] Clicking a different note while in edit mode should discard your changes
       and display the new note instead.
 
-![completed edit notes](https://raw.githubusercontent.com/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-edit.gif)
+![completed edit notes](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-evernote-json-server-guided-project/master/_screenshots/react-evernote-edit.gif)
 
 ## Stretch Goals
 
