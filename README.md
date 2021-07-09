@@ -1,7 +1,7 @@
 # React Evernote Guided Project
 
 In this guided project, we'll be building an Evernote-like application built
-with a React frontend and Rails backend.
+with React.
 
 Your goal will be to complete the baseline deliverables using the provided
 starter code and then make this project your own by building out unique stretch
