@@ -1,4 +1,4 @@
-# React Evernote Guided Project
+# Phase 2 Guided Project Guidelines
 
 In this guided project, we'll be building an Evernote-like application with React.
 
@@ -8,10 +8,12 @@ goals. Some suggestions are listed below, but try to be creative!
 
 ## Requirements
 
-- [ ] Complete all of the _Deliverables_.
-- [ ] Build out at least 1 stretch goal feature.
+- [ ] Complete all of the deliverables
+- [ ] Build out at least 1 stretch goal feature
 
 ## Setup
+
+To get started, fork and clone this repository.
 
 The codebase is split up into a JSON Server API backend and a React frontend.
 
