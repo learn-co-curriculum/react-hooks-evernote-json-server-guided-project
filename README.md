@@ -21,9 +21,9 @@ The codebase is split up into a JSON Server API backend and a React frontend.
 
 To setup and run your frontend:
 
-```sh
-npm install
-npm start
+```console
+$ npm install
+$ npm start
 ```
 
 This React app will be running on `http://localhost:4000`.
@@ -32,8 +32,8 @@ This React app will be running on `http://localhost:4000`.
 
 First, set up your database by running:
 
-```sh
-npm run seed
+```console
+$ npm run seed
 ```
 
 This will seed some starter data for you in the `db/db.json` file. Any time you
@@ -42,8 +42,8 @@ to overwrite your data with some fresh seed data.
 
 To run `json-server`, run:
 
-```sh
-npm run server
+```console
+$ npm run server
 ```
 
 Your backend API will be running on `http://localhost:3000`.
