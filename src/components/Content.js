@@ -2,6 +2,7 @@ import React from "react";
 import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import Instructions from "./Instructions";
+import { Route, Switch } from "react-router-dom";
 
 /*
   Advice: If you cannot figure out how to get this component to work,
@@ -11,19 +12,23 @@ import Instructions from "./Instructions";
           refactor to get this Content component to work.
 */
 function Content({ displayNote }) {
-  const getContent = () => {
-    if (false) {
-      return <NoteEditor />;
-    } else if (false) {
-      return <NoteViewer displayNote = {displayNote}/>;
-    } else {
-      return <Instructions />;
-    }
-  };
-console.log("content", displayNote)
-  // return <div className="master-detail-element detail">
-  //   <NoteViewer displayNote = {displayNote}/>
-  //   </div>;
+
+  return (
+    <div className="master-detail-element detail">
+      <Switch>
+        <Route exact path="/">
+          <Instructions />
+        </Route>
+        <Route path="/:id">
+          <NoteViewer displayNote={displayNote} />
+        </Route>
+        <Route path="/:id/edit">
+          <NoteEditor />
+        </Route>
+      </Switch>
+      {/* {getContent()} */}
+    </div>
+  );
 }
 
 export default Content;

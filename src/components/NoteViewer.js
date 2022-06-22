@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoteViewer({ displayNote } ) {
+function NoteViewer({ displayNote }) {
   // console.log("noteviewer", displayNote)
   // console.log('title', title)
   // console.log('body', body)
