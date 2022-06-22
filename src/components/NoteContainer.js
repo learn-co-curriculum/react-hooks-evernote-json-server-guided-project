@@ -3,7 +3,7 @@ import Search from "./Search";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 // import NoteViewer from './NoteViewer'
-import { useHistory } from "react-router-dom";
+import { useRouteMatch, useHistory, Redirect } from "react-router-dom";
 
 function NoteContainer() {
   const [notes, setNotes] = useState([]);
@@ -23,7 +23,7 @@ function NoteContainer() {
   function handleClick(noteId) {
     const noteToDisplay = notes.find((note) => note.id === noteId);
     setDisplayNote(noteToDisplay);
-    history.push(`${noteId}`);
+    history.push(`/${noteId}`);
   }
 
   const filteredNotes = notes.filter((val) => {
@@ -38,6 +38,18 @@ function NoteContainer() {
     setNotes([...notes, newNote]);
   }
 
+ function handleEditSubmit(editedNote) {
+  const editedNotes = notes.map(note => {
+    if (note.id === editedNote.id) {
+      return editedNote
+    } else {
+      return note
+    }
+  })
+  setNotes(editedNotes)
+  history.push(`/${displayNote.id}`)
+  };
+
   return (
     <>
       <Search handleSearch={handleSearch} searchTerm={searchTerm} />
@@ -47,7 +59,7 @@ function NoteContainer() {
           handleClick={handleClick}
           handleAddNote={handleAddNote}
         />
-        <Content displayNote={displayNote} />
+        <Content displayNote={displayNote} handleEditSubmit={handleEditSubmit}/>
       </div>
     </>
   );

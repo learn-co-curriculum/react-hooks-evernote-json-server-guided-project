@@ -5,7 +5,7 @@ function Sidebar({ notes, handleClick, handleAddNote }) {
 
   function addNote() {
     const newNote = {title: 'draft title', body: 'draft body'}
-  fetch('http://localhost:3000/notes', {
+    fetch('http://localhost:3000/notes', {
     method: 'POST', 
     headers: { 'Content-type': 'application/json'},
     body: JSON.stringify(

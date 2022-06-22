@@ -2,7 +2,7 @@ import React from "react";
 import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import Instructions from "./Instructions";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 
 /*
   Advice: If you cannot figure out how to get this component to work,
@@ -11,7 +11,7 @@ import { Route, Switch } from "react-router-dom";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content({ displayNote }) {
+function Content({ displayNote, handleEditSubmit }) {
 
   return (
     <div className="master-detail-element detail">
@@ -19,11 +19,11 @@ function Content({ displayNote }) {
         <Route exact path="/">
           <Instructions />
         </Route>
+        <Route path="/:id/edit">
+          <NoteEditor displayNote = {displayNote} handleEditSubmit={handleEditSubmit}/>
+        </Route>
         <Route path="/:id">
           <NoteViewer displayNote={displayNote} />
-        </Route>
-        <Route path="/:id/edit">
-          <NoteEditor />
         </Route>
       </Switch>
       {/* {getContent()} */}
