@@ -13,13 +13,15 @@ function NoteContainer() {
     .then(notes => setNotes(notes))
   },[])
 
-  //console.log(notes)
+  const handleClick = (note) => {
+    console.log(note) 
+  }
 
   return (
     <>
       <Search />
       <div className="container">
-        <Sidebar notes={notes}/>
+        <Sidebar handleClick={handleClick} notes={notes}/>
         <Content />
       </div>
     </>
