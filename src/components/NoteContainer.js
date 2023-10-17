@@ -13,13 +13,13 @@ function NoteContainer() {
     .then(notes => setNotes(notes))
   },[])
 
-  console.log(notes)
+  //console.log(notes)
 
   return (
     <>
       <Search />
       <div className="container">
-        <Sidebar />
+        <Sidebar notes={notes}/>
         <Content />
       </div>
     </>
