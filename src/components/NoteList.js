@@ -15,7 +15,7 @@ function NoteList({notes}) {
   return (
     <ul>
       {renderNotes}
-      <NoteItem />
+      <NoteItem notes={notes}/>
     </ul>
   );
 }

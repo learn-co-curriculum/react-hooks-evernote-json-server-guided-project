@@ -185,3 +185,10 @@ button:hover, .nav-bar:hover, input[type="submit"]:hover {
 button:focus, input[type="submit"]:focus {
   outline: none;
 }
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
