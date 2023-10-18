@@ -6,7 +6,8 @@ import Content from "./Content";
 function NoteContainer() {
 
   const [notes, setNotes] = useState([])
-  //const [clickedNote, setClickedNote] = useState(false)
+  const [viewNote, setViewNote] = useState(false)
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/notes")
@@ -16,15 +17,15 @@ function NoteContainer() {
 
   const handleClick = (note) => {
     console.log(note)
+    setViewNote(note)
   }
-
 
   return (
     <>
       <Search />
       <div className="container">
           <Sidebar handleClick={handleClick} notes={notes}/>
-          <Content notes={notes}/>
+          <Content viewNote={viewNote}/>
       </div>
     </>
   );
