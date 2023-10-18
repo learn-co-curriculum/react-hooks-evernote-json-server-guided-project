@@ -35,7 +35,7 @@ console.log(filterNotes)
     <>
       <Search onSearch={onSearch}/>
       <div className="container">
-          <Sidebar handleClick={handleClick} notes={notes}/>
+          <Sidebar handleClick={handleClick} notes={filterNotes}/>
           <Content viewNote={viewNote}/>
       </div>
     </>
