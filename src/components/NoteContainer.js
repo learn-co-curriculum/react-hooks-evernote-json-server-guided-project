@@ -8,7 +8,11 @@ function NoteContainer() {
   const [notes, setNotes] = useState([])
   const [viewNote, setViewNote] = useState(false)
   const [searchTitle, setSearchTitle] = useState("")
+  const [addNote, setAddNote] = useState([])
   
+  function addNoteToState(noteObj) {
+    setNotes([...notes, noteObj])
+  }
 
   useEffect(() => {
     fetch("http://localhost:3000/notes")
@@ -30,12 +34,13 @@ function NoteContainer() {
     const lowerCaseSearchTitle = searchTitle.toLowerCase()
     return lowerCaseTitle.includes(lowerCaseSearchTitle)
   })
-console.log(filterNotes)
+
+
   return (
     <>
-      <Search onSearch={onSearch}/>
+      <Search onSearch={onSearch} />
       <div className="container">
-          <Sidebar handleClick={handleClick} notes={filterNotes}/>
+          <Sidebar handleClick={handleClick} notes={filterNotes} setNotes={setNotes} addNoteToState={addNoteToState}/>
           <Content viewNote={viewNote}/>
       </div>
     </>
