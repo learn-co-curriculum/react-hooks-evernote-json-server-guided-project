@@ -7,6 +7,7 @@ function NoteContainer() {
 
   const [notes, setNotes] = useState([])
   const [viewNote, setViewNote] = useState(false)
+  const [searchTitle, setSearchTitle] = useState("")
   
 
   useEffect(() => {
@@ -20,9 +21,19 @@ function NoteContainer() {
     setViewNote(note)
   }
 
+  function onSearch(searchString){
+    setSearchTitle(searchString)
+  }
+  
+  const filterNotes = notes.filter((note) => {
+    const lowerCaseTitle = note.title.toLowerCase()
+    const lowerCaseSearchTitle = searchTitle.toLowerCase()
+    return lowerCaseTitle.includes(lowerCaseSearchTitle)
+  })
+console.log(filterNotes)
   return (
     <>
-      <Search />
+      <Search onSearch={onSearch}/>
       <div className="container">
           <Sidebar handleClick={handleClick} notes={notes}/>
           <Content viewNote={viewNote}/>
