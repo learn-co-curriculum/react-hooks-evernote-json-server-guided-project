@@ -3,9 +3,17 @@ import React from "react";
 
 function NoteEditor({selectedNote, handleEditNote, updateNote}) {
 
+
   function getValue(e){
-    updateNote(e.target.name, e.target.value)
+    updateNote((cVal)=>{ 
+      return {
+        ...cVal,
+        [e.target.name]: e.target.value
+      }
+    })
   }
+  
+
 
   function handleSubmit(e) {
     e.preventDefault();
