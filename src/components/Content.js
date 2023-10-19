@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import Instructions from "./Instructions";
@@ -10,14 +10,20 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content({display}) {
-  //  console.log(display)
+function Content({selectedNote, handleEditNote, updateNote}) {
+
+  const [isEditing, setIsEditting] = useState(false)
+
+  function enableEditing(){
+    setIsEditting(true)
+  }
+
   const getContent = () => {
     //  console.log(props)
-    if (!editNote) {
-      return <NoteEditor  />;
-    } else if (editNote) {
-      return <NoteViewer display={display} />;
+    if (isEditing) {
+      return <NoteEditor selectedNote={selectedNote} handleEditNote={handleEditNote} updateNote={updateNote} />;
+    } else if (selectedNote) {
+      return <NoteViewer selectedNote={selectedNote} enableEditing={enableEditing}/>;
     } else {
       return <Instructions/>;
     }

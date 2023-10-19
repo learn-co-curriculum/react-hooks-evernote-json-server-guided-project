@@ -1,17 +1,16 @@
 import React from "react";
 import NoteList from "./NoteList";
 
-function Sidebar({notesArr, renderContent}) {
+function Sidebar({notesArr, renderContent, handlePost}) {
   //  console.log(notesArr)
-  function form(){
-    fetch("")
-    .then(resp=>resp.json())
-    .then()
+  function handleCreateNote(e){
+    handlePost(e)
   }
+
   return (
     <div className="master-detail-element sidebar">
       <NoteList notesArr={notesArr} renderContent={renderContent}/>
-      <button onClick={form}>New</button>
+      <button onClick={handleCreateNote}>New</button>
     </div>
   );
 }

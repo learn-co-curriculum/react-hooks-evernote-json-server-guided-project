@@ -1,15 +1,16 @@
 import React from "react";
+import NoteEditor from "./NoteEditor";
 
-function NoteViewer({display}) {
-  // console.log(display)
-  function handleEdit(){
-    console.log("click")
+function NoteViewer({selectedNote, enableEditing}) {
+ 
+  function handleClick(){
+    enableEditing()
   }
   return (
     <>
-      <h2>{display.title}</h2>
-      <p>{display.body}</p>
-      <button onClick={handleEdit}>Edit</button>
+      <h2>{selectedNote.title}</h2>
+      <p>{selectedNote.body}</p>
+      <button onClick={handleClick}>Edit</button>
     </>
   );
 }

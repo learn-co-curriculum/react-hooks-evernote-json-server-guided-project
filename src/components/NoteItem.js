@@ -1,10 +1,11 @@
 import React from "react";
 
-function NoteItem({note, display}) {
+function NoteItem({note, renderContent}) {
   let body = note.body.slice(0,30)
+
   function handleClick(){
-    // console.log("click")
-    display(note)
+    renderContent(note)
+    // seleteNote(note)
   }
 
   return (

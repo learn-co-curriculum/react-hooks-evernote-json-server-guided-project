@@ -4,10 +4,22 @@ import Sidebar from "./Sidebar";
 import Content from "./Content";
 
 function NoteContainer() {
+
   const [notesArr, setNotes] = useState([])
+
+  function addNoteToSt(newNote){
+    setNotes((n)=>{
+      return ([...n, newNote])
+    })
+  }
+
   const [searchValue, setSearchValue] = useState("")
-  const [display, onDisplay] = useState(null)
-  const [editNote, setEditNote] = useState(false)
+
+  const defaultNote = {
+    title:"Add Title",
+    body:"Add Note",
+    userId: 1
+  }
 
   useEffect(()=>{
     fetch('http://localhost:3000/notes')
@@ -24,23 +36,44 @@ function NoteContainer() {
     const lowerCaseSearchTerm = searchValue.toLowerCase();
     return lowerCasedTitle.includes(lowerCaseSearchTerm);
   })
-  
-  function renderContent(noteObj){
-    onDisplay(noteObj)
-    setEditNote(editNote)
+
+  function handlePost(){
+    fetch('http://localhost:3000/notes',{
+      method: "POST",
+      headers: {
+        'Content-Type':'application/json',
+        'Accept':'application/json'
+      },
+      body: JSON.stringify(defaultNote)
+    })
+    .then(resp=>resp.json())
+    .then(data=>addNoteToSt(data))
+   
   }
 
-  // function editNote(){
-    
-  // }
-   
+  const [selectedNote, setSelectedNotes] = useState(false)
+  function renderContent(noteObj){
+    setSelectedNotes(noteObj)
+  }
+
+  const [edit, setEdit] = useState(null)
+  function updateNote(name, value){
+    setEdit({...edit, [name]:value })
+  }
+
+  const handleEditNote = noteobj => {
+    setNotes(notesArr.map((note)=>
+    note.id === noteobj.id ? noteobj : note
+    ))
+  }
   
+
   return (
     <>
       <Search onSearch={onSearch}/>
       <div className="container">
-        <Sidebar notesArr={filterNotes} renderContent={renderContent} />
-        <Content display={display} />
+        <Sidebar notesArr={filterNotes} handlePost={handlePost} renderContent={renderContent} />
+        <Content selectedNote={selectedNote} handleEditNote={handleEditNote} updateNote={updateNote}/>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ function NoteList({notesArr, renderContent}) {
     <NoteItem 
     key={noteObj.id} 
     note={noteObj} 
-    display={renderContent}
+    renderContent={renderContent}
     />
    ))
   return (
