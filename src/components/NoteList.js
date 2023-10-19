@@ -17,7 +17,7 @@ function NoteList({notes, handleClick}) {
   return (
     <ul>
       {renderNotes}
-      <NoteItem notes={notes}/>
+      <NoteItem notes={notes} />
     </ul>
   );
 }

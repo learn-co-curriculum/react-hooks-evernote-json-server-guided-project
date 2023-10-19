@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import NoteList from "./NoteList";
 import NoteItem from "./NoteItem";
 
-function Sidebar({notes, handleClick, setNotes, addNoteToState}) {
+function Sidebar({notes, handleClick, addNoteToState}) {
 
   function handleNewNote() {
     const newNote = {title:"newTitle", body: "newBody"}

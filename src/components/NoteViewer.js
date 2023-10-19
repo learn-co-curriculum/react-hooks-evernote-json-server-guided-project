@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 
-function NoteViewer({note}) {
- 
+function NoteViewer({note, handleEdit}) {
+
+
   return (
     <>
       <h2>{note.title}</h2>
       <p>{note.body}</p>
-      <button>Edit</button>
+      <button onClick={handleEdit}>Edit</button>
     </>
   );
 }
 
 export default NoteViewer;
+
