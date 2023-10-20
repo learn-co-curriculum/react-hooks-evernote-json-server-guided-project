@@ -1,12 +1,16 @@
 import React from "react";
 
-function NoteItem() {
+function NoteItem({title, body, handleClick}) {
+
+  const note = {title, body}
+
   return (
-    <li>
-      <h2>Title</h2>
-      <p>Caption...</p>
+    <li onClick={()=>{handleClick(note)}}>
+      <h2>{title}</h2>
+      <p className ="truncate">{body}</p>
     </li>
   );
 }
 
 export default NoteItem;
+

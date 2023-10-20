@@ -1,11 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import NoteList from "./NoteList";
+import NoteItem from "./NoteItem";
 
-function Sidebar() {
+function Sidebar({notes, handleClick, addNoteToState}) {
+
+  function handleNewNote() {
+    const newNote = {title:"newTitle", body: "newBody"}
+
+  fetch("http://localhost:3000/notes",{
+    method: "POST",
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(newNote),
+  }) 
+  .then((r) => r.json())
+  .then((freshNote) => {
+    addNoteToState(freshNote)
+  })
+}
+
   return (
     <div className="master-detail-element sidebar">
-      <NoteList />
-      <button>New</button>
+        <NoteList handleClick={handleClick} notes={notes}/>
+      <button onClick={handleNewNote}>New</button>
     </div>
   );
 }
