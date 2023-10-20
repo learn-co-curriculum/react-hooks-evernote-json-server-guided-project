@@ -5,7 +5,7 @@ function Header() {
     <div className="nav-bar">
       <ul>
         <li className="nav-item">
-          <h2>Your App Title Goes Here</h2>
+          <h2>OneFitness</h2>
         </li>
       </ul>
     </div>
