@@ -12,7 +12,6 @@ function NoteList({notesArr, renderContent}) {
    ))
   return (
     <ul>
-      {/* Render list of notes here... */}
       {note}
     </ul>
   );

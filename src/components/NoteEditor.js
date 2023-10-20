@@ -1,40 +1,48 @@
-import React from "react";
+import React, {useState} from "react";
 
 
-function NoteEditor({selectedNote, handleEditNote, updateNote}) {
+function NoteEditor({title, body, id, handleEditNote, handleEditFeat, renderContent}) {
 
-
-  function getValue(e){
-    updateNote((cVal)=>{ 
-      return {
-        ...cVal,
-        [e.target.name]: e.target.value
-      }
-    })
+  const [onTitle, setTitle] = useState(title)
+  const [onBody, setBody] = useState(body)
+  function handleOnChangeTitle(e){
+    setTitle(e.target.value)
   }
-  
+  function handleOnChangeBody(e){
+    setBody(e.target.value)
+  }
 
+  function handleCancel(){
+    handleEditFeat()
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`http://localhost:4000/notes/${selectedNote.id}`, {
+    fetch(`http://localhost:3000/notes/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(selectedNote),
+      body: JSON.stringify({
+        body: onBody,
+        title: onTitle
+      }),
     })
     .then((resp) => resp.json())
-    .then(handleEditNote);
+    .then((data)=>(
+      handleEditNote(data), 
+      renderContent(data), 
+      handleEditFeat()
+    ))
   }
 
   return (
     <form onSubmit={handleSubmit} className="note-editor">
-      <input placeholder={selectedNote.title} type="text" name="title" value={selectedNote.title} onChange={getValue}/>
-      <textarea placeholder={selectedNote.body} name="body" value={selectedNote.body} onChange={getValue}/>
+      <input placeholder={title} type="text" name="title" value={onTitle} onChange={handleOnChangeTitle}/>
+      <textarea placeholder={body} name="body" value={onBody} onChange={handleOnChangeBody} />
       <div className="button-row">
         <input className="button" type="submit" value="Save" />
-        <button type="button">Cancel</button>
+        <button onClick={handleCancel} type="button">Cancel</button>
       </div>
     </form>
   );

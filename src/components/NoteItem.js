@@ -5,7 +5,6 @@ function NoteItem({note, renderContent}) {
 
   function handleClick(){
     renderContent(note)
-    // seleteNote(note)
   }
 
   return (
